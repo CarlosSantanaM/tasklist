@@ -10,7 +10,7 @@
         @csrf
 
         <div>
-            <label for="">Nome da tarefa:</label>
+            <label for="">Etiqueta:</label>
             <input type="text" name="tarefa" placeholder="Digite o nome da tarefa">
         </div>
 
