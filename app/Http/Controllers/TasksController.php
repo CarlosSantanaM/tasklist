@@ -29,4 +29,10 @@ class TasksController extends Controller
 
         return redirect()->route('home')->with('success', 'Task created successfully!');
     }
+
+    public function painel(){
+
+        return view('painel');
+    }
+
 }
