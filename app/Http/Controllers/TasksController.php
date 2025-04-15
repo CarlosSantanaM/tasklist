@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tasks;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -23,16 +24,22 @@ class TasksController extends Controller
 
     public function store(Request $request){
 
-        // $request->validate([
-        //     'task' => 'required|max:255',
-        // ]);
+        // Validação
+
+        $validated = $request->validate([
+            'tarefa' => 'required|string|max:255',
+            'descricao' => 'nullable|string|max:1000',
+            'data' =>  'required|date|after_or_equal:today',
+        ]);
+
+        //Criar task e salvar no banco
+        Tasks::create([
+            'tarefa' => $validated['tarefa'],
+            'descricao' => $validated['descricao'],
+            'data_entrega' => $validated['data'],
+        ]);
 
         return redirect()->route('home')->with('success', 'Task created successfully!');
-    }
-
-    public function painel(){
-
-        return view('painel');
     }
 
 }
