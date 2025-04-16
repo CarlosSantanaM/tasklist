@@ -11,8 +11,8 @@ class TasksController extends Controller
     // Rota Home
     public function home(){
 
-        return view('home');
-
+        $tasks = Tasks::orderBy('data_entrega')->get(); // Pegar Task por data de entrega
+        return view('home', compact('tasks'));
     }
 
     // Rota Vizualizar Form Tarefas
