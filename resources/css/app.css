@@ -1,0 +1,49 @@
+
+/* View das tasks */
+
+/* Tasks em caixas linhas 3 tasks */
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 coluna */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.task {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de criar tarefa */
+.create-task-wrapper {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.create-task-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.create-task-btn:hover {
+    background-color: #45a049;
+  }
+
+/* Mensagem de "Nenhuma tarefa encontrada" */
+.task-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+    font-weight: bold;
+}
