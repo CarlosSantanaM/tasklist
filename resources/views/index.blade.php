@@ -14,30 +14,36 @@
     </div>
 @endif
 
-    <h1>Lista de Tarefas:</h1>
+<div class="form-group">
+    <a href="{{ route('home') }}" class="back-button">← Voltar para Home</a>
+</div>
 
-    <form action="{{ Route('tasks.store') }}" method="POST">
+
+<div class="form-wrapper">
+    <h1>Lista de Tarefas</h1>
+
+    <form action="{{ route('tasks.store') }}" method="POST" class="task-form">
         @csrf
 
-        <div>
-            <label for="">Etiqueta:</label>
+        <div class="form-group">
+            <label for="tarefa">Etiqueta:</label>
             <input type="text" name="tarefa" placeholder="Digite o nome da tarefa">
         </div>
 
-        <div>
-            <label for="">Descricao:</label>
-            <textarea name="descricao" id="desc" cols="33" rows="5" placeholder="Digite a descricao da sua tarefa"></textarea>
+        <div class="form-group">
+            <label for="desc">Descrição:</label>
+            <textarea name="descricao" id="desc" cols="30" rows="4" placeholder="Digite a descrição da tarefa"></textarea>
         </div>
 
-        <div>
-            <label for="">Data de entrega:</label>
+        <div class="form-group">
+            <label for="data">Data de entrega:</label>
             <input type="date" name="data" id="data">
         </div>
 
-        <div>
+        <div class="form-group">
             <button type="submit">Criar</button>
         </div>
-
     </form>
+</div>
 
 @endsection
